@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="col-sm-6 ">
+    <form class="jumbotron "> <!--[formGroup]="rFrom" (ngSubmit)="addPost(rFrom.value)"-->
+      <!--formControlName="lastName"-->
+      <div class="">
+        <ul class="form-style-1">  <!--formControlName="firstName"-->
+          <div class="panel">
+            <label>PREVIOUS EMPLOYEE DETAILS </label>
+          </div>
+          <li>
+            <label>CompanyName <span class="required">*</span></label>
+            <input type="email" name="CompanyName1" [(ngModel)]="UserDetails.CompanyName1" class="field-long"/>
+          </li>
+
+          <li>
+            <label>Employee Id<span class="required">*</span></label>
+            <input type="text" name="EmpId1" [(ngModel)]="UserDetails.EmpId1" class="field-long"/>
+          </li>
+
+
+          <li>
+            <label>Email <span class="required">*</span></label>
+            <input type="email" name="EmailId1" [(ngModel)]="UserDetails.EmailId1" class="field-long"/>
+          </li>
+
+          <li>
+            <label>Department <span class="required">*</span></label>
+            <input type="text" name="DepartName1" [(ngModel)]="UserDetails.DepartName1" class="field-long"/>
+          </li>
+
+          <li>
+            <label>Experience <span class="required">*</span></label>
+            <input type="text" name="Experience" [(ngModel)]="UserDetails.Experience" class="field-long"/>
+          </li>
+          <li>
+            <!-- [disabled]="!rForm.valid"-->
+            <button type="submit" class="btn btn-default" id="submitbtn3" name="submit" value="Submit"
+                    (click)="registerNextUser()">Submit
+            </button>
+            <input type="reset" class="btn btn-default" id="submitbtn4" name="Previous" value="Previous"
+                   (click)="clickOnPreviousUsr()">
+          </li>
+        </ul>
+      </div>
+    </form>
+  </div>
+</div>

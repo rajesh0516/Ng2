@@ -1,0 +1,46 @@
+<form>
+  <div class="jumbotron">
+    <!--[formGroup]="rFrom" (ngSubmit)="addPost(rFrom.value)"-->  <!--formControlName="lastName"-->
+    <ul class="form-style-1">  <!--formControlName="firstName"-->
+      <div class="panel">
+        <label>CURRENT EMPLOYEE DETAILS </label>
+      </div>
+      <li><label>Full Name <span class="required">*</span></label>
+        <input type="text" name="field1"
+               class="field-divided"
+               placeholder="First"
+               [(ngModel)]="UserDetails.FirstName"/>&nbsp;<input
+          type="text" name="field2" class="field-divided" placeholder="Last" [(ngModel)]="UserDetails.LastName"/>
+      </li>
+      <li>
+        <label>Employee Id<span class="required">*</span></label>
+        <input type="text" name="EmpId" [(ngModel)]="UserDetails.EmpId" class="field-long"/>
+      </li>
+      <li>
+        <label>Email <span class="required">*</span></label>
+        <input type="email" name="EmailId" [(ngModel)]="UserDetails.EmailId" class="field-long"/>
+      </li>
+      <li>
+        <label>Phone Number <span class="required">*</span></label>
+        <input type="text" name="ContactNum" [(ngModel)]="UserDetails.ContactNum" class="field-long"/>
+      </li>
+      <li>
+        <label>Department <span class="required">*</span></label>
+        <input type="text" name="DepartName" [(ngModel)]="UserDetails.DepartName" class="field-long"/>
+      </li>
+      <li>
+        <label>Current Address <span class="required">*</span></label>
+        <textarea name="field7" id="CurrentAdd" [(ngModel)]="UserDetails.CurrentAdd"
+                  class="field-long field-textarea"></textarea>
+      </li>
+      <li>
+        <!-- [disabled]="!rForm.valid"-->
+        <button type="submit" class="btn btn-default" id="submitbtn1" name="submit" value="Submit"
+                (click)="registerUser()">Register
+        </button>
+        <input type="reset" class="btn btn-default" id="submitbtn2" name="clear" value="Clear">
+      </li>
+    </ul>
+
+  </div>
+</form>

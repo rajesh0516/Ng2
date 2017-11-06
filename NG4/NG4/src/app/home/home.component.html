@@ -1,0 +1,77 @@
+<div class=" col-sm-6 ">
+  <div class="row">
+    <div class="">
+      <div class=" jumbotron3 col-md-12">
+        <h3 class="panel panel-title"><b>DEVELOPERS</b></h3>
+        <!-- <div class="pull-right">
+                           <span class="clickable filter" data-toggle="tooltip" title="Toggle table filter" data-container="body">
+                               <i class="glyphicon glyphicon-filter"></i>
+                           </span>
+         </div>-->
+        <!--
+                <div class="panel-body">
+                  <input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table"
+                         placeholder="Filter Developers"/>
+                </div>
+        -->
+        <table class="table table-hover" id="dev-table">
+          <thead>
+          <tr>
+         <!--/   <th>Employee Name</th>-->
+            <th>Employee ID</th>
+            <th>Email ID</th>
+            <th>Previous Company Name</th>
+            <th>Phone Number</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <!--<td>{{UserDetails.FirstName}}</td>-->
+            <td>{{userData.EmpId}}</td>
+            <td>{{userData.EmailId}}</td>
+            <td>{{userData.CompanyName1}}</td>
+            <td>{{userData.ContactNum}}</td>
+          </tr>
+
+          <!-- <tr *ngFor="let employee of UserDetails">
+             <td>{{$index}}</td>
+             <td>{{employee.FirstName}}</td>
+             <td>{{employee.EmpId}}</td>
+             <td>{{employee.EmailId}}</td>
+             <td>{{employee.CompanyName1}}</td>
+             <td>{{employee.ContactNum}}</td>
+           </tr>-->
+          <!-- <tr>
+             <td>2</td>
+             <td>Steven</td>
+             <td>123ABC</td>
+             <td>steven@gmail.com</td>
+             <td>Polaries</td>
+             <td>9876543210</td>
+           </tr>
+           <tr>
+             <td>3</td>
+             <td>Steven</td>
+             <td>123ABC</td>
+             <td>steven@gmail.com</td>
+             <td>Polaries</td>
+             <td>9876543210</td>
+           </tr>-->
+
+          <tr>
+           <!-- <td>
+              <button type="submit" class="btn btn-default" id="submitbtn5" name="Close" value="Close"
+                      (click)="closeUser()">Close
+              </button>
+            </td>-->
+          </tr>
+          </tbody>
+
+        </table>
+      </div>
+    </div>
+    <div class="col-md-6">
+    </div>
+  </div>
+</div>
+
