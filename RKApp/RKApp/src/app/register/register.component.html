@@ -1,0 +1,283 @@
+<!--<div class="jumbotron form-style-3">
+  <form>
+    <fieldset><legend>Personal</legend>
+      <label for="field1"><span>Name <span class="required">*</span></span><input type="text" class="input-field" name="field1" value="" /></label>
+      <label for="field2"><span>Email <span class="required">*</span></span><input type="email" class="input-field" name="field2" value="" /></label>
+      <label for="field3"><span>Phone <span class="required">*</span></span><input type="text" class="input-field" name="field3" value="" /></label>
+      <label for="field4"><span>Subject</span><select name="field4" class="select-field">
+        <option value="Appointment">Appointment</option>
+        <option value="Interview">Interview</option>
+        <option value="Regarding a post">Regarding a post</option>
+      </select></label>
+    </fieldset>
+    <fieldset><legend>Message</legend>
+      <label for="field6"><span>Message <span class="required">*</span></span><textarea name="field6" class="textarea-field"></textarea></label>
+      <label><span>&nbsp;</span><input type="submit" value="Submit" /></label>
+    </fieldset>
+  </form>
+</div>-->
+<div *ngIf="!isTrue">
+  <form>
+    <div class="jumbotron">
+      <!--[formGroup]="rFrom" (ngSubmit)="addPost(rFrom.value)"-->  <!--formControlName="lastName"-->
+      <ul class="form-style-1">  <!--formControlName="firstName"-->
+        <div class="panel">
+          <label>CURRENT EMPLOYEE DETAILS </label>
+        </div>
+        <li><label>Full Name <span class="required">*</span></label>
+          <input type="text" name="FirstName"
+                                                                           class="field-divided"
+                                                                           placeholder="First"
+                                                                           [(ngModel)]="UserDetails.FirstName"/>&nbsp;<input
+          type="text" name="LastName" class="field-divided" placeholder="Last" [(ngModel)]="UserDetails.LastName"/>
+        </li>
+        <li>
+          <label>Employee Id<span class="required">*</span></label>
+          <input type="text" name="EmpId" [(ngModel)]="UserDetails.EmpId" class="field-long"/>
+        </li>
+        <li>
+          <label>Email <span class="required">*</span></label>
+          <input type="email" name="EmailId" [(ngModel)]="UserDetails.EmailId" class="field-long"/>
+        </li>
+        <li>
+          <label>Phone Number <span class="required">*</span></label>
+          <input type="text" name="ContactNum" [(ngModel)]="UserDetails.ContactNum" class="field-long"/>
+        </li>
+        <li>
+          <label>Department <span class="required">*</span></label>
+          <input type="text" name="DepartName" [(ngModel)]="UserDetails.DepartName" class="field-long"/>
+        </li>
+        <li>
+          <label>Current Address <span class="required">*</span></label>
+          <textarea name="field7" id="CurrentAdd" [(ngModel)]="UserDetails.CurrentAdd"
+                    class="field-long field-textarea"></textarea>
+        </li>
+        <li>
+          <!-- [disabled]="!rForm.valid"-->
+          <button type="submit" class="btn btn-default" id="submitbtn1" name="submit" value="Submit"
+                  (click)="registerUser()">Register
+          </button>
+          <input type="reset" class="btn btn-default" id="submitbtn2" name="clear" value="Clear">
+        </li>
+      </ul>
+
+    </div>
+  </form>
+</div>
+
+
+<div class="container">
+  <div class="col-sm-6 " *ngIf="isTrue">
+    <form class="jumbotron2"> <!--[formGroup]="rFrom" (ngSubmit)="addPost(rFrom.value)"-->
+      <!--formControlName="lastName"-->
+      <div class="">
+        <ul class="form-style-1">  <!--formControlName="firstName"-->
+          <div class="panel">
+            <label>PREVIOUS EMPLOYEE DETAILS </label>
+          </div>
+          <li>
+            <label>CompanyName <span class="required">*</span></label>
+            <input type="email" name="CompanyName1" [(ngModel)]="UserDetails.CompanyName1" class="field-long"/>
+          </li>
+
+          <li>
+            <label>Employee Id<span class="required">*</span></label>
+            <input type="text" name="EmpId1" [(ngModel)]="UserDetails.EmpId1" class="field-long"/>
+          </li>
+
+
+          <li>
+            <label>Email <span class="required">*</span></label>
+            <input type="email" name="EmailId1" [(ngModel)]="UserDetails.EmailId1" class="field-long"/>
+          </li>
+
+          <li>
+            <label>Department <span class="required">*</span></label>
+            <input type="text" name="DepartName1" [(ngModel)]="UserDetails.DepartName1" class="field-long"/>
+          </li>
+
+          <li>
+            <label>Experience <span class="required">*</span></label>
+            <input type="text" name="Experience" [(ngModel)]="UserDetails.Experience" class="field-long"/>
+          </li>
+          <li>
+            <!-- [disabled]="!rForm.valid"-->
+            <button type="submit" class="btn btn-default" id="submitbtn3" name="submit" value="Submit"
+                    (click)="registerNextUser()">Submit
+            </button>
+            <input type="reset" class="btn btn-default" id="submitbtn4" name="Previous" value="Previous"
+                   (click)="clickOnPreviousUsr()">
+          </li>
+        </ul>
+      </div>
+    </form>
+  </div>
+  <div class=" col-sm-6 " *ngIf="isSecondPagevisible">
+    <div class="row">
+      <div class="">
+        <div class=" jumbotron3">
+          <h3 class="panel panel-title"><b>EMPLOYEE DETAILS</b></h3>
+          <!-- <div class="pull-right">
+                             <span class="clickable filter" data-toggle="tooltip" title="Toggle table filter" data-container="body">
+                                 <i class="glyphicon glyphicon-filter"></i>
+                             </span>
+           </div>-->
+          <!--
+                  <div class="panel-body">
+                    <input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table"
+                           placeholder="Filter Developers"/>
+                  </div>
+          -->
+          <table class="table table-hover" id="dev-table">
+            <thead>
+            <tr>
+              <!--<th> Sr.No</th>-->
+              <th>Employee Name</th>
+              <th>Employee ID</th>
+              <th>Email ID</th>
+              <th>Previous Company Name</th>
+              <th>Phone Number</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!--<tr *ngFor="let employee of UserDetails">
+              <td>{{$index}}</td>-->
+            <tr>
+              <td>{{UserDetails.FirstName}}</td>
+              <td>{{UserDetails.EmpId}}</td>
+              <td>{{UserDetails.EmailId}}</td>
+              <td>{{UserDetails.CompanyName1}}</td>
+              <td>{{UserDetails.ContactNum}}</td>
+            </tr>
+            <!-- <tr>
+               <td>2</td>
+               <td>Steven</td>
+               <td>123ABC</td>
+               <td>steven@gmail.com</td>
+               <td>Polaries</td>
+               <td>9876543210</td>
+             </tr>
+             <tr>
+               <td>3</td>
+               <td>Steven</td>
+               <td>123ABC</td>
+               <td>steven@gmail.com</td>
+               <td>Polaries</td>
+               <td>9876543210</td>
+             </tr>-->
+
+           <!-- <tr>
+              <td>
+                <button type="submit" class="btn btn-default" id="submitbtn5" name="Close" value="Close"
+                        (click)="closeUser()">Close
+                </button>
+              </td>
+            </tr>-->
+            </tbody>
+
+          </table>
+        </div>
+      </div>
+      <div class="col-md-6">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--<ng-template #forminfo>-->
+<!--
+{{UserDetails|json}}-->
+<!--</ng-template>-->
+
+<!--<input type="submit" class="btn btn-primary form2" id="submitbtn1" name="submit" value="Submit">
+<input type="reset" class="btn btn-primary form2" id="submitbtn2" name="clear" value="Clear">-->
+
+
+                  <!--
+
+
+<div class="omb_login">
+  <div class="row omb_row-sm-offset-3">
+    <div class="col-xs-12 col-sm-6">
+      <div class="omb_loginForm" action="" autocomplete="off" method="POST">
+
+        <div class="input-group">
+          &lt;!&ndash;<span class="input-group-addon"><i class="fa fa-user"></i></span>&ndash;&gt;
+          <input type="text" class="form-control"
+                 [(ngModel)]="UserDetails.FirstName"
+                  placeholder="First Name">
+        </div>
+        <span class="help-block"></span>
+
+        <div class="input-group">
+          &lt;!&ndash;<span class="input-group-addon"><i class="fa fa-user"></i></span>&ndash;&gt;
+          <input type="text" class="form-control"
+                 [(ngModel)]="UserDetails.LastName"
+                 name="LastName"  placeholder="last Name">
+        </div>
+        <span class="help-block"></span>
+
+        <div class="input-group">
+          &lt;!&ndash;<span class="input-group-addon"><i class="fa fa-user"></i></span>&ndash;&gt;
+          <input type="text" class="form-control"
+                 [(ngModel)]="UserDetails.UserName"
+                 name="UserName"  placeholder="User Name">
+        </div>
+        <span class="help-block"></span>
+
+
+       &lt;!&ndash; <div class="input-group">
+          &lt;!&ndash;<span class="input-group-addon"><i class="fa fa-user"></i></span>&ndash;&gt;
+          <input  type="password" class="form-control" name="Password" [(ngModel)]="UserDetails.Password" placeholder="Password">
+        </div>
+        <span class="help-block">Password error</span>
+&ndash;&gt;
+        &lt;!&ndash;<div class="input-group">
+          &lt;!&ndash;<span class="input-group-addon"><i class="fa fa-user"></i></span>&ndash;&gt;
+          <input type="radio"
+                 [(ngModel)]="UserDetails.Gender"
+                 name="Gender"  value="Male"> Male
+        </div>&ndash;&gt;
+
+        &lt;!&ndash;<div class="input-group">
+          &lt;!&ndash;<span class="input-group-addon"><i class="fa fa-user"></i></span>&ndash;&gt;
+          <input type="radio"
+                 [(ngModel)]="UserDetails.Gender"
+                 name="Gender"  value="Female"> Female
+        </div>&ndash;&gt;
+
+
+
+      &lt;!&ndash;  <div class="input-group">
+          <select [(ngModel)] = "UserDetails.country" (change)="countryChanged()">
+            <option *ngFor="let item of countries"
+            value="{{item.code}}">{{item.name}}
+            </option>
+          </select>
+        </div>
+        <span class="help-block"></span>&ndash;&gt;
+
+       &lt;!&ndash; <div class="input-group">
+          <input type="text" [disabled]="UserDetails.country=='IN'">
+        </div>
+        <div class="input-group">&ndash;&gt;
+          &lt;!&ndash;<span class="input-group-addon"><i class="fa fa-user"></i></span>&ndash;&gt;
+         &lt;!&ndash; <input type="checkbox"
+                 [(ngModel)]="UserDetails.RememberMe"
+                 name="RememberMe" >Remember Me
+        </div>
+        <span class="help-block"></span>&ndash;&gt;
+
+
+        <button class="btn btn-lg btn-primary btn-block" (click)="registerUser()" >Register</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+-->
+
+
+<!--<br>-->
+<!--{{countries|json}}-->
