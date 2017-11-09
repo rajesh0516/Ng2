@@ -1,0 +1,56 @@
+<div class="wrapper">
+  <header>
+    <div class="container">
+      <div id="logo">Logo Here</div>
+
+      <!--<nav>-->
+        <!--<a href="#">Home</a>-->
+        <!--<a href="#">Blog</a>-->
+        <!--<a href="#">Courses</a>-->
+        <!--<a href="#">Jobs</a>-->
+        <!--<a href="#">Contact</a>-->
+      <!--</nav>-->
+
+    </div>
+  </header>
+
+  <a id="scrollToTop" class="hide" href="#"><i class="fa fa-arrow-circle-up"></i></a>
+
+</div>
+<script type="text/javascript">
+  /*Head animatioon change JQuery code below*/
+
+  $(document).on('scroll',function(){
+
+    if($(this).scrollTop() > 1){
+      $('header').addClass('stivky');
+    }
+
+    else{
+      $('header').removeClass('stivky');
+    }
+  });
+
+  /*top botton Scroll to top animatioon change JQuery code below*/
+
+  $(document).on('click','#scrollToTop',function(){
+    $('html,body').animate({scrollTop:0},500);
+    return false;
+  });
+
+  /*top botton show/hide animatioon change JQuery code below*/
+
+  $(document).scroll(function(e){
+    var scrollpos = $(this).scrollTop();
+
+    if(scrollpos <500){
+      $('#scrollToTop').addClass('hide');
+    }
+    else{
+      $('#scrollToTop').removeClass('hide');
+
+    }
+
+
+  });
+</script>
