@@ -13,7 +13,10 @@
     </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li *ngFor="let tab of Tabs" [routerLink]="tab.name"><a>{{tab.display}}</a></li>
+        <li *ngIf="form1Enb"><a routerLink="jobs">Form1</a></li>
+        <li *ngIf="form2Enb"><a routerLink="register">Form2</a></li>
+        <li *ngIf="form3Enb"><a routerLink="home">Form3</a></li>
+        <!--<li *ngFor="let tab of Tabs" [routerLink]="tab.name"><a>{{tab.display}}</a></li>-->
         <!--<li><a href="#">Home</a></li>-->
         <!--<li><a href="#">Login</a></li>-->
         <!--<li><a href="#">Register</a></li>-->
